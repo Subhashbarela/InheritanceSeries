@@ -7,25 +7,21 @@ using System.Threading.Tasks;
 
 namespace OopsConcept
 {
-    interface IPolygon
+   
+    class Program
     {
-         void calculateArea(int l, int b);
-
-    }
-    class Program: IPolygon
-    {
-        public void calculateArea(int l, int b)
-        {
-            
-            int area = l * b;
-            Console.WriteLine("Area of Rectangle: " + area);
-        }
+       
         static void Main(string[] args)
             {
-          Program Obj= new Program();
-            Obj.calculateArea(1, 2);
-            
-           }
+            //using refernce name of interface
+             IPolygon r1 = new Rectangle();
+             IColor r2 = new Rectangle();
+             r1.calculateArea(10, 10);
+              r2.calculateArea(20, 10);
+
+
+
         }
+    }
     
 }
