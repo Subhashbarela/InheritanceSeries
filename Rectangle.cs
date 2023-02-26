@@ -6,42 +6,38 @@ using System.Threading.Tasks;
 
 namespace OopsConcept
 {
+    //..............access single interface into multiple class...........................
     interface IPolygon
     {
-        // use multiple interface to access in single class //  multiple inheritancs
-        void calculateArea(int l, int b);
 
-    }
-    interface IColor
-    {
-
-        void calculateArea(int l, int b);
-            void getColor();
-
+        void calculateArea();
 
     }
 
-
-    internal class Rectangle : IPolygon, IColor
+    class Rectangle : IPolygon
     {
-        void IColor.calculateArea(int l, int b)
-        {
-          
-            int area = l * b ;
-            Console.WriteLine("Area of Rectangle in Icolor interface : " + area);
-        }
-         void IPolygon.calculateArea(int l, int b)
-        {
-           
-            int area = l * b ;
-            Console.WriteLine("Area of Rectangle in Ipolygon interface : " + area);
-        }
-       
-        public void getColor()
+
+
+        public void calculateArea()
         {
 
-            Console.WriteLine("Red Rectangle");
+            int l = 10;
+            int b = 20;
+            int area = l * b;
+            Console.WriteLine("Area of Rectangle: " + area);
+        }
+    }
 
+    class Square : IPolygon
+    {
+
+
+        public void calculateArea()
+        {
+
+            int l = 10;
+            int area = l * l;
+            Console.WriteLine("Area of Square: " + area);
         }
     }
 }

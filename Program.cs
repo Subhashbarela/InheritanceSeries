@@ -13,12 +13,11 @@ namespace OopsConcept
        
         static void Main(string[] args)
             {
-            //using refernce name of interface
-             IPolygon r1 = new Rectangle();
-             IColor r2 = new Rectangle();
-             r1.calculateArea(10, 10);
-              r2.calculateArea(20, 10);
+            IPolygon r1 = new Rectangle();
+            r1.calculateArea();
 
+            IPolygon r2 = new Square();
+            r2.calculateArea();
 
 
         }
